@@ -134,6 +134,8 @@ public class TimetableAppController implements Initializable {
         Tab4.setDisable(true);
         
         myTimetable.setDisable(true);
+        
+        mainMenu.getSelectionModel().select(newTimetable);
      }
 public void fillTable(){
     

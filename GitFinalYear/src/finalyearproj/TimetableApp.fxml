@@ -11,21 +11,65 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.Bloom?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="492.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="finalyearproj.TimetableAppController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="492.0" prefWidth="1035.0" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="finalyearproj.TimetableAppController">
    <children>
-      <TabPane id="tab" fx:id="mainMenu" prefHeight="492.0" prefWidth="650.0" stylesheets="@timetablecss.css" tabClosingPolicy="UNAVAILABLE">
+      <TabPane id="tab" fx:id="mainMenu" prefHeight="492.0" prefWidth="1033.0" stylesheets="@timetablecss.css" tabClosingPolicy="UNAVAILABLE">
         <tabs>
           <Tab fx:id="myTimetable" text="My timetable">
             <content>
-              <AnchorPane id="anchor" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" stylesheets="@timetablecss.css" />
+              <AnchorPane id="anchor" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="999.0" stylesheets="@timetablecss.css">
+                     <children>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="371.0" layoutX="81.0" layoutY="77.0" stroke="BLACK" strokeType="INSIDE" width="618.0" />
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1fff22" height="371.0" layoutX="705.0" layoutY="77.0" stroke="BLACK" strokeType="INSIDE" width="247.0" />
+                        <TableView layoutX="88.0" layoutY="84.0" prefHeight="358.0" prefWidth="108.0">
+                          <columns>
+                            <TableColumn prefWidth="107.0" text="Monday" />
+                              <TableColumn prefWidth="107.0" text="C1" />
+                          </columns>
+                        </TableView>
+                        <TableView layoutX="208.0" layoutY="84.0" prefHeight="358.0" prefWidth="108.0">
+                           <columns>
+                              <TableColumn prefWidth="107.0" text="Tuesday" />
+                              <TableColumn prefWidth="107.0" text="C1" />
+                           </columns>
+                        </TableView>
+                        <TableView layoutX="331.0" layoutY="84.0" prefHeight="358.0" prefWidth="108.0">
+                           <columns>
+                              <TableColumn prefWidth="107.0" text="Wednesday" />
+                              <TableColumn prefWidth="107.0" text="C1" />
+                           </columns>
+                        </TableView>
+                        <TableView layoutX="458.0" layoutY="84.0" prefHeight="358.0" prefWidth="108.0">
+                           <columns>
+                              <TableColumn prefWidth="107.0" text="Thursday" />
+                              <TableColumn prefWidth="107.0" text="C1" />
+                           </columns>
+                        </TableView>
+                        <TableView layoutX="584.0" layoutY="84.0" prefHeight="358.0" prefWidth="108.0">
+                           <columns>
+                              <TableColumn prefWidth="107.0" text="Friday" />
+                           </columns>
+                        </TableView>
+                        <TableView layoutX="713.0" layoutY="84.0" prefHeight="358.0" prefWidth="108.0">
+                           <columns>
+                              <TableColumn prefWidth="107.0" text="Saturday" />
+                           </columns>
+                        </TableView>
+                        <TableView layoutX="837.0" layoutY="84.0" prefHeight="358.0" prefWidth="108.0">
+                           <columns>
+                              <TableColumn prefWidth="107.0" text="Sunday" />
+                           </columns>
+                        </TableView>
+                     </children></AnchorPane>
             </content>
           </Tab>
           <Tab fx:id="newTimetable" text="New Timetable">
             <content>
-              <AnchorPane id="anchor" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" stylesheets="@timetablecss.css">
+              <AnchorPane id="anchor" minHeight="0.0" minWidth="0.0" prefHeight="459.0" prefWidth="436.0" stylesheets="@timetablecss.css">
                      <children>
                         <TabPane fx:id="timetableMenu" layoutX="-3.0" layoutY="1.0" prefHeight="460.0" prefWidth="656.0" tabClosingPolicy="UNAVAILABLE">
                           <tabs>
