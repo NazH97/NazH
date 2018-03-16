@@ -249,8 +249,4 @@ public void fillTable(){
         Tab3.setDisable(true);
         Tab4.setDisable(false);
     }
-
-    
-    
-    
 }
