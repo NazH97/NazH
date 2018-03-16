@@ -37,8 +37,6 @@ public class TimetableAppController implements Initializable {
 
     @FXML
     private TextField subjectName;
-     @FXML
-    private TabPane tabPane;
      
      @FXML
     private Button addSubject;
@@ -110,6 +108,16 @@ public class TimetableAppController implements Initializable {
     private Tab Tab4;
     @FXML
     private Tab Tab1;
+    @FXML
+    private Tab myTimetable;
+    @FXML
+    private Tab newTimetable;
+    @FXML
+    private Button generateTimetable;
+    @FXML
+    private TabPane mainMenu;
+    @FXML
+    private TabPane timetableMenu;
    
     
     
@@ -124,6 +132,8 @@ public class TimetableAppController implements Initializable {
         Tab2.setDisable(true);
         Tab3.setDisable(true);
         Tab4.setDisable(true);
+        
+        myTimetable.setDisable(true);
      }
 public void fillTable(){
     
@@ -195,7 +205,7 @@ public void fillTable(){
     @FXML
     private void Next1(ActionEvent event) {
         
-        tabPane.getSelectionModel().select(Tab2);
+        timetableMenu.getSelectionModel().select(Tab2);
         Tab1.setDisable(true);
         Tab2.setDisable(false);
       
@@ -238,15 +248,23 @@ public void fillTable(){
             alert.showAndWait();
         }
         
-        tabPane.getSelectionModel().select(Tab3);
+        timetableMenu.getSelectionModel().select(Tab3);
     } 
 
     @FXML
     private void Next3(ActionEvent event) {
-        tabPane.getSelectionModel().select(Tab4);
+        timetableMenu.getSelectionModel().select(Tab4);
         Tab1.setDisable(true);
         Tab2.setDisable(true);
         Tab3.setDisable(true);
         Tab4.setDisable(false);
+    }
+
+    @FXML
+    private void generateTimetableAction(ActionEvent event) {
+        myTimetable.setDisable(false);
+        newTimetable.setDisable(true);
+        mainMenu.getSelectionModel().select(myTimetable);
+        
     }
 }

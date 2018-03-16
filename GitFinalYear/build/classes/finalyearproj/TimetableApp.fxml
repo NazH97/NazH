@@ -16,18 +16,18 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="492.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="finalyearproj.TimetableAppController">
    <children>
-      <TabPane id="tab" prefHeight="492.0" prefWidth="650.0" stylesheets="@timetablecss.css" tabClosingPolicy="UNAVAILABLE">
+      <TabPane id="tab" fx:id="mainMenu" prefHeight="492.0" prefWidth="650.0" stylesheets="@timetablecss.css" tabClosingPolicy="UNAVAILABLE">
         <tabs>
-          <Tab text="My timetable">
+          <Tab fx:id="myTimetable" text="My timetable">
             <content>
               <AnchorPane id="anchor" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" stylesheets="@timetablecss.css" />
             </content>
           </Tab>
-          <Tab text="New Timetable">
+          <Tab fx:id="newTimetable" text="New Timetable">
             <content>
               <AnchorPane id="anchor" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" stylesheets="@timetablecss.css">
                      <children>
-                        <TabPane fx:id="tabPane" layoutX="-3.0" layoutY="1.0" prefHeight="460.0" prefWidth="656.0" tabClosingPolicy="UNAVAILABLE">
+                        <TabPane fx:id="timetableMenu" layoutX="-3.0" layoutY="1.0" prefHeight="460.0" prefWidth="656.0" tabClosingPolicy="UNAVAILABLE">
                           <tabs>
                             <Tab fx:id="Tab1" text="Modules &amp; Dates">
                               <content>
@@ -189,7 +189,7 @@
                                 <content>
                                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                        <children>
-                                          <Button layoutX="258.0" layoutY="202.0" mnemonicParsing="false" text="Generate my timetable!" />
+                                          <Button fx:id="generateTimetable" layoutX="258.0" layoutY="202.0" mnemonicParsing="false" onAction="#generateTimetableAction" text="Generate my timetable!" />
                                        </children>
                                     </AnchorPane>
                                 </content>
