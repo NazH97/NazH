@@ -120,6 +120,10 @@ public class TimetableAppController implements Initializable {
         
         ActivityDay.setValue("Monday");
         ActivityDay.setItems(ActivityDayList);
+        
+        Tab2.setDisable(true);
+        Tab3.setDisable(true);
+        Tab4.setDisable(true);
      }
 public void fillTable(){
     
@@ -192,6 +196,8 @@ public void fillTable(){
     private void Next1(ActionEvent event) {
         
         tabPane.getSelectionModel().select(Tab2);
+        Tab1.setDisable(true);
+        Tab2.setDisable(false);
       
     }
 
@@ -215,6 +221,9 @@ public void fillTable(){
 
     @FXML
     private void Next2(ActionEvent event) {
+        Tab1.setDisable(true);
+        Tab2.setDisable(true);
+        Tab3.setDisable(false);
         try {
                 SQLiteConnection db = SQLiteConnection.getInstance();
                 String stmt = "INSERT INTO Class (MondayStart, MondayEnd,TuesdayStart,TuesdayEnd,WednesdayStart,WednesdayEnd,ThursdayStart,ThursdayEnd,FridayStart,FridayEnd) VALUES ('" + MonS.getText() + "', '" + MonF.getText() + "', '" + TueS.getText() + "', '" + TueF.getText() + "', '" + WedS.getText() + "', '" + WedF.getText() + "', '" + ThurS.getText() + "', '" + ThurF.getText() + "', '" + FriS.getText() + "','" +FriF.getText() + "');";
@@ -235,6 +244,10 @@ public void fillTable(){
     @FXML
     private void Next3(ActionEvent event) {
         tabPane.getSelectionModel().select(Tab4);
+        Tab1.setDisable(true);
+        Tab2.setDisable(true);
+        Tab3.setDisable(true);
+        Tab4.setDisable(false);
     }
 
     
