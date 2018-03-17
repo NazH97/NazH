@@ -151,24 +151,24 @@
                                                 <Label layoutX="14.0" layoutY="171.0" text="Wednesday:" AnchorPane.leftAnchor="11.0" AnchorPane.topAnchor="190.0" />
                                                 <Label layoutX="108.0" layoutY="207.0" text="Thursday:" AnchorPane.leftAnchor="11.0" AnchorPane.topAnchor="235.0" />
                                                 <Label layoutX="13.0" layoutY="251.0" text="Friday:" AnchorPane.leftAnchor="11.0" AnchorPane.topAnchor="280.0" />
-                                                <TextField fx:id="MonS" layoutX="92.0" layoutY="96.0" AnchorPane.topAnchor="100.0" />
-                                                <TextField fx:id="TueS" layoutX="92.0" layoutY="141.0" AnchorPane.topAnchor="145.0" />
-                                                <TextField fx:id="WedS" layoutX="92.0" layoutY="186.0" AnchorPane.topAnchor="190.0" />
-                                                <TextField fx:id="ThurS" layoutX="92.0" layoutY="244.0" AnchorPane.topAnchor="235.0" />
-                                                <TextField fx:id="FriS" layoutX="92.0" layoutY="284.0" AnchorPane.topAnchor="280.0" />
                                                 <Label layoutX="272.0" layoutY="104.0" text="to" />
                                                 <Label layoutX="272.0" layoutY="149.0" text="to" />
                                                 <Label layoutX="272.0" layoutY="194.0" text="to" />
                                                 <Label layoutX="272.0" layoutY="239.0" text="to" />
                                                 <Label layoutX="272.0" layoutY="284.0" text="to" />
-                                                <TextField fx:id="MonF" layoutX="316.0" layoutY="100.0" />
-                                                <TextField fx:id="TueF" layoutX="316.0" layoutY="149.0" />
-                                                <TextField fx:id="WedF" layoutX="316.0" layoutY="190.0" />
-                                                <TextField fx:id="ThurF" layoutX="316.0" layoutY="235.0" />
-                                                <TextField fx:id="FriF" layoutX="316.0" layoutY="280.0" />
                                                 <Label layoutX="11.0" layoutY="329.0" text="OR I dont have a consistent class schedule:" />
                                                 <CheckBox layoutX="288.0" layoutY="329.0" mnemonicParsing="false" />
                                                 <Button id="button" fx:id="nxt2" layoutX="552.0" layoutY="390.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#Next2" prefHeight="25.0" prefWidth="75.0" stylesheets="@timetablecss.css" text="Next" AnchorPane.bottomAnchor="14.800000000000011" AnchorPane.rightAnchor="22.799999999999955" />
+                                                <ComboBox fx:id="MonS" layoutX="92.0" layoutY="98.0" prefWidth="150.0" />
+                                                <ComboBox fx:id="MonF" layoutX="303.0" layoutY="98.0" prefWidth="150.0" />
+                                                <ComboBox fx:id="TueS" layoutX="92.0" layoutY="140.0" prefWidth="150.0" />
+                                                <ComboBox fx:id="TueF" layoutX="303.0" layoutY="140.0" prefWidth="150.0" />
+                                                <ComboBox fx:id="WedS" layoutX="92.0" layoutY="185.0" prefWidth="150.0" />
+                                                <ComboBox fx:id="WedF" layoutX="303.0" layoutY="185.0" prefWidth="150.0" />
+                                                <ComboBox fx:id="ThurS" layoutX="92.0" layoutY="232.0" prefWidth="150.0" />
+                                                <ComboBox fx:id="ThurF" layoutX="303.0" layoutY="232.0" prefWidth="150.0" />
+                                                <ComboBox fx:id="FriS" layoutX="92.0" layoutY="275.0" prefWidth="150.0" />
+                                                <ComboBox fx:id="FriF" layoutX="303.0" layoutY="275.0" prefWidth="150.0" />
                                              </children>
                                           </AnchorPane>
                                        </children>
