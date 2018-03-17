@@ -212,11 +212,11 @@ public void fillTable(){
                 fillTable();
             
         } catch (NullPointerException e) {
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("ERROR");
-            alert.setHeaderText(null);
-            alert.setContentText("One of the fields is empty");
-            alert.showAndWait();
+            //Alert alert = new Alert(Alert.AlertType.ERROR);
+            //alert.setTitle("ERROR");
+            //alert.setHeaderText(null);
+            //alert.setContentText("One of the fields is empty");
+           // alert.showAndWait();
         }
     }
     
