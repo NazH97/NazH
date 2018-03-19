@@ -34,6 +34,8 @@ import javafx.scene.control.cell.PropertyValueFactory;
 public class TimetableAppController implements Initializable {
     
         ObservableList<String> ActivityDayList = FXCollections.observableArrayList("Monday","Tuesday","Wednesday","Thursday","Friday");
+        private final ObservableList<String> TimesOfTheDay = FXCollections.observableArrayList("07:00", "07:30", "08:00", "08:30", "09:00", "09:30", "10:00", "10:30", "11:00", "11:30", "12:00");
+
 
     @FXML
     private TextField subjectName;
@@ -71,25 +73,25 @@ public class TimetableAppController implements Initializable {
     @FXML
     private Button AddActivity;
     @FXML
-    private TextField MonS;
+    private ComboBox MonS;
     @FXML
-    private TextField TueS;
+    private ComboBox TueS;
     @FXML
-    private TextField WedS;
+    private ComboBox WedS;
     @FXML
-    private TextField ThurS;
+    private ComboBox ThurS;
     @FXML
-    private TextField FriS;
+    private ComboBox FriS;
     @FXML
-    private TextField MonF;
+    private ComboBox MonF;
     @FXML
-    private TextField TueF;
+    private ComboBox TueF;
     @FXML
-    private TextField WedF;
+    private ComboBox WedF;
     @FXML
-    private TextField ThurF;
+    private ComboBox ThurF;
     @FXML
-    private TextField FriF;
+    private ComboBox FriF;
     @FXML
     private Button nxt2;
     @FXML
@@ -136,6 +138,21 @@ public class TimetableAppController implements Initializable {
         myTimetable.setDisable(true);
         
         mainMenu.getSelectionModel().select(newTimetable);
+        
+        MonS.getItems().addAll(TimesOfTheDay);
+        MonF.getItems().addAll(TimesOfTheDay);
+        
+        TueS.getItems().addAll(TimesOfTheDay);
+        TueF.getItems().addAll(TimesOfTheDay);
+        
+        WedS.getItems().addAll(TimesOfTheDay);
+        WedF.getItems().addAll(TimesOfTheDay);
+        
+        ThurS.getItems().addAll(TimesOfTheDay);
+        ThurF.getItems().addAll(TimesOfTheDay);
+        
+        FriS.getItems().addAll(TimesOfTheDay);
+        FriF.getItems().addAll(TimesOfTheDay);
      }
 public void fillTable(){
     
@@ -195,11 +212,11 @@ public void fillTable(){
                 fillTable();
             
         } catch (NullPointerException e) {
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("ERROR");
-            alert.setHeaderText(null);
-            alert.setContentText("One of the fields is empty");
-            alert.showAndWait();
+            //Alert alert = new Alert(Alert.AlertType.ERROR);
+            //alert.setTitle("ERROR");
+            //alert.setHeaderText(null);
+            //alert.setContentText("One of the fields is empty");
+           // alert.showAndWait();
         }
     }
     
@@ -238,7 +255,7 @@ public void fillTable(){
         Tab3.setDisable(false);
         try {
                 SQLiteConnection db = SQLiteConnection.getInstance();
-                String stmt = "INSERT INTO Class (MondayStart, MondayEnd,TuesdayStart,TuesdayEnd,WednesdayStart,WednesdayEnd,ThursdayStart,ThursdayEnd,FridayStart,FridayEnd) VALUES ('" + MonS.getText() + "', '" + MonF.getText() + "', '" + TueS.getText() + "', '" + TueF.getText() + "', '" + WedS.getText() + "', '" + WedF.getText() + "', '" + ThurS.getText() + "', '" + ThurF.getText() + "', '" + FriS.getText() + "','" +FriF.getText() + "');";
+                String stmt = "INSERT INTO Class (MondayStart, MondayEnd,TuesdayStart,TuesdayEnd,WednesdayStart,WednesdayEnd,ThursdayStart,ThursdayEnd,FridayStart,FridayEnd) VALUES ('" + MonS.getSelectionModel().getSelectedItem().toString() + "', '" + MonF.getSelectionModel().getSelectedItem().toString() + "', '" + TueS.getSelectionModel().getSelectedItem().toString() + "', '" + TueF.getSelectionModel().getSelectedItem().toString() + "', '" + WedS.getSelectionModel().getSelectedItem().toString() + "', '" + WedF.getSelectionModel().getSelectedItem().toString() + "', '" + ThurS.getSelectionModel().getSelectedItem().toString() + "', '" + ThurF.getSelectionModel().getSelectedItem().toString() + "', '" + FriS.getSelectionModel().getSelectedItem().toString() + "','" +FriF.getSelectionModel().getSelectedItem().toString() + "');";
                 db.update(stmt);
                 fillTable();
             
