@@ -19,6 +19,7 @@ import javafx.scene.Node;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
 import javafx.scene.control.TableColumn;
@@ -43,7 +44,7 @@ public class TimetableAppController implements Initializable {
      @FXML
     private Button addSubject;
     @FXML
-    private TextField DateOfExam;
+    private DatePicker DateOfExam;
     @FXML
     private TextField HoursPerWeek;
     
@@ -69,7 +70,7 @@ public class TimetableAppController implements Initializable {
     @FXML
     private ComboBox ActivityDay;
     @FXML
-    private TextField ActivityTime;
+    private ComboBox ActivityTime;
     @FXML
     private Button AddActivity;
     @FXML
@@ -120,6 +121,10 @@ public class TimetableAppController implements Initializable {
     private TabPane mainMenu;
     @FXML
     private TabPane timetableMenu;
+    @FXML
+    private TextField ActivityLength;
+    @FXML
+    private TableColumn<?, ?> ActivityDurationColumn;
    
     
     
@@ -153,6 +158,9 @@ public class TimetableAppController implements Initializable {
         
         FriS.getItems().addAll(TimesOfTheDay);
         FriF.getItems().addAll(TimesOfTheDay);
+        
+         ActivityTime.getItems().addAll(TimesOfTheDay);
+
      }
 public void fillTable(){
     
@@ -197,6 +205,7 @@ public void fillTable(){
         ActivityNameColumn.setCellValueFactory(new PropertyValueFactory<>("Activity"));
         ActivityDayColumn.setCellValueFactory(new PropertyValueFactory<>("DayOfActivity"));
         ActivityTimeColumn.setCellValueFactory(new PropertyValueFactory<>("TimeOfActivity"));
+        ActivityDurationColumn.setCellValueFactory(new PropertyValueFactory<>("ActivityDuration"));
       
     }
     
@@ -206,21 +215,32 @@ public void fillTable(){
     @FXML
     public void addNewSubject(ActionEvent event) {
         try {
+            
                 SQLiteConnection db = SQLiteConnection.getInstance();
-                String stmt = "INSERT INTO Subjects (Subject, HoursPW, ExamDate) VALUES ('" + subjectName.getText() + "', '" + HoursPerWeek.getText() + "', '" + DateOfExam.getText() + "');";
+                String stmt = "INSERT INTO Subjects (Subject, HoursPW, ExamDate) VALUES ('" + subjectName.getText() + "', '" + HoursPerWeek.getText() + "', '" + DateOfExam.getValue() + "');";
                 db.update(stmt);
                 fillTable();
             
         } catch (NullPointerException e) {
-            //Alert alert = new Alert(Alert.AlertType.ERROR);
-            //alert.setTitle("ERROR");
-            //alert.setHeaderText(null);
-            //alert.setContentText("One of the fields is empty");
-           // alert.showAndWait();
+      
         }
     }
     
-
+     /*  @FXML
+    public void DeleteNewSubject(ActionEvent event) {
+        try {
+            selected = SubjectTable.getSelectionModel().getSelectedItems();
+            
+                SQLiteConnection db = SQLiteConnection.getInstance();
+                String stmt = "DELETE FROM Subjects where);";
+                db.update(stmt);
+                fillTable();
+            
+        } catch (NullPointerException e) {
+      
+        }
+    }
+*/
     @FXML
     private void Next1(ActionEvent event) {
         
@@ -234,7 +254,7 @@ public void fillTable(){
     private void AddNewActivity(ActionEvent event) {
          try {
                 SQLiteConnection db = SQLiteConnection.getInstance();
-                String stmt = "INSERT INTO Activities (Activity, DayOfActivity, TimeOfActivity) VALUES ('" + ActivityName.getText() + "', '" + ActivityDay.getValue() + "', '" + ActivityTime.getText() + "');";
+                String stmt = "INSERT INTO Activities (Activity, DayOfActivity, TimeOfActivity, ActivityDuration) VALUES ('" + ActivityName.getText() + "', '" + ActivityDay.getValue() + "', '" + ActivityTime.getValue() + "', '" + ActivityLength.getText() + "');";
                 db.update(stmt);
                 fillActivityTable();
             
